@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  omdb:
+    build:
+      dockerfile: Dockerfile
+      target: run
+      context: .
+    ports:
+      - 5500:5500
+    environment:
+      API_KEY: ${API_KEY}
+    volumes:
+      - ..:/app-root
+      - .:/app-root/omdb
